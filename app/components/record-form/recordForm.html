@@ -1,0 +1,70 @@
+<div class="form">
+    <h4 class="title">Add New Record</h4>
+    <div class="row">
+        <form name="recordForm" ng-submit="recordFormCtrl.saveRecord()" class="col s12">
+            <div class="row">
+                <div class="input-field col l12 m12 s12">
+                    <div class="row">
+                        <div class="col s9">
+                          <label for="uploadedBy">
+                              Uploaded By
+                          </label>
+                          <input id="uploadedBy" ng-disabled="recordFormCtrl.saving" type="text" ng-model="recordFormCtrl.record.uploadedBy" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="input-field col l12 m12 s12">
+                    <div class="row">
+                        <div class="col s9">
+                          <label for="key">
+                              Key
+                          </label>
+                            <input id="key" type="text" ng-disabled="recordFormCtrl.saving"  ng-model="recordFormCtrl.record.key" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="input-field col l12 m12 s12">
+                    <div class="row">
+                        <div class="col s9">
+                          <label for="secret">
+                              Secret
+                          </label>
+                          <input id="secret" type="text" ng-disabled="recordFormCtrl.saving"  ng-model="recordFormCtrl.record.secret" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="file-field input-field col l9 m9 s9">
+                    <div class="btn  blue darken-4">
+                        <span>Select File</span>
+                        <input type="file" file-model="recordFormCtrl.record.file" ng-disabled="recordFormCtrl.saving"  required>
+                    </div>
+                    <div class="file-path-wrapper">
+                        <input class="file-path validate" type="text">
+                    </div>
+                </div>
+                <div class="input-field col s12">
+                  <div class="row">
+                    <div class="col s4">
+                    </div>
+                    <div class="col s4">
+                    <button class="waves-effect waves-light btn blue darken-4  submit" ng-disabled="recordFormCtrl.saving"  type="submit">Submit</button>
+                    </div>
+                    <div class="col s4">
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<div id="alertModal" class="modal modal-fixed-footer">
+    <div class="modal-header">
+        <p class="blue-text" style="text-align:center">Message</p>
+    </div>
+    <div class="modal-content">
+        <p style="text-align:center">{{recordFormCtrl.message}}</p>
+    </div>
+    <div class="modal-footer" style="text-align:center">
+        <button type="button" class="modal-action modal-close waves-effect waves-green btn-flat blue darken-4 white-text ">Ok</button>
+    </div>
+</div>

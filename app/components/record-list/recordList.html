@@ -1,0 +1,33 @@
+<div class="data">
+    <h4 class="title">Record List</h4>
+    <table class="striped">
+        <thead>
+            <tr>
+                <th data-field="field1">Id</th>
+                <th data-field="field1">Key</th>
+                <th data-field="field2">Secret</th>
+                <th data-field="field3">Filename</th>
+                <th data-field="field4">Uploaded By</th>
+                <th data-field="field5">Uploaded Time</th>
+            </tr>
+        </thead>
+        <tbody ng-if="!recordListCtrl.recordsEmpty()">
+            <tr>
+                <td colspan="7" style="text-align:center">No Records Added yet!</td>
+            </tr>
+        </tbody>
+        <tbody ng-if="recordListCtrl.recordsEmpty()">
+            <tr ng-repeat="record in recordListCtrl.records">
+                <td>{{record.id}}</td>
+                <td>{{record.key}}</td>
+                <td>{{record.secret}}</td>
+                <td>{{record.fileName}}</td>
+                <td>{{record.uploadedBy}}</td>
+                <td>{{record.uploadTime}}</td>
+                <td>
+                    <button ng-click="recordListCtrl.deleteRecord(record.id)" class="waves-effect waves-light btn blue darken-4  submit"><i class="material-icons left">delete</i>Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
